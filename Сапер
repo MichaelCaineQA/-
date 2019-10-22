@@ -17,21 +17,21 @@ print(field)
 for i in range(5):
     for j in range(5):
         if field[i][j]=="бомба":
-            if (i!=0) and (j!=0) and field[i-1][j-1]!="бомба":  # up left
+            if (i!=0) and (j!=0) and field[i-1][j-1]!="бомба": 
                     field[i-1][j-1]+=1
-            if (j != 4) and (i != 0) and field[i - 1][j + 1]!="бомба":  # up right
+            if (j != 4) and (i != 0) and field[i - 1][j + 1]!="бомба": 
                     field[i - 1][j + 1] += 1
-            if (i != 4) and (j != 0) and field[i + 1][j - 1]!="бомба":  # down left
+            if (i != 4) and (j != 0) and field[i + 1][j - 1]!="бомба": 
                     field[i + 1][j - 1] += 1
             if (i != 4) and (j != 4) and field[i + 1][j + 1]!="бомба":
-                    field[i + 1][j + 1] += 1  # down right
-            if (i!=0) and field[i-1][j]!="бомба":  # up
+                    field[i + 1][j + 1] += 1  
+            if (i!=0) and field[i-1][j]!="бомба": 
                     field[i-1][j]+=1
-            if (j != 0) and field[i][j - 1]!="бомба":  # left
+            if (j != 0) and field[i][j - 1]!="бомба": 
                     field[i][j - 1] += 1
-            if (j != 4) and field[i][j + 1]!="бомба":  # right
+            if (j != 4) and field[i][j + 1]!="бомба": 
                     field[i][j + 1] += 1
-            if (i != 4) and field[i + 1][j]!="бомба":  # down
+            if (i != 4) and field[i + 1][j]!="бомба":
                     field[i + 1][j] += 1
 
 print(field)
