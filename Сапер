@@ -34,3 +34,4 @@ for i in range(5):
                     field[i + 1][j] += 1
 
 print(field)
+#тык
