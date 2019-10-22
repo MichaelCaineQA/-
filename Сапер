@@ -3,7 +3,7 @@ number_of_bombs = 6
 while number_of_bombs!=0:
     bomb = input()
     bomb = bomb.split()
-    if not (bomb[0].isdigit()) or not (bomb[1].isdigit()) or (bomb.__len__()>2):
+    if not (bomb[0].isdigit()) or not (bomb[1].isdigit()) or (bomb.__len__()!=2):
         print('Неправильный формат ввода, введите заново')
     elif ((int(bomb[0])<1) or (int(bomb[0])>5) or (int(bomb[1])<1) or (int(bomb[1])>5)):
         print("Индексы за границами игрового поля, введите заново")
