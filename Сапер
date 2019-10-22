@@ -12,7 +12,6 @@ while number_of_bombs!=0:
     else:
         field[int(bomb[0])-1][int(bomb[1])-1] = "бомба"
         number_of_bombs -=1
-print(field)
 
 for i in range(5):
     for j in range(5):
