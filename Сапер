@@ -1,0 +1,37 @@
+field = [[0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0]]
+number_of_bombs = 6
+while number_of_bombs!=0:
+    bomb = input()
+    bomb = bomb.split()
+    if not (bomb[0].isdigit()) or not (bomb[1].isdigit()) or (bomb.__len__()>2):
+        print('Неправильный формат ввода, введите заново')
+    elif ((int(bomb[0])<1) or (int(bomb[0])>5) or (int(bomb[1])<1) or (int(bomb[1])>5)):
+        print("Индексы за границами игрового поля, введите заново")
+    elif (field[int(bomb[0])-1][int(bomb[1])-1] == "бомба"):
+        print("Такая бомба уже установлена, введите заново")
+    else:
+        field[int(bomb[0])-1][int(bomb[1])-1] = "бомба"
+        number_of_bombs -=1
+print(field)
+
+for i in range(5):
+    for j in range(5):
+        if field[i][j]=="бомба":
+            if (i!=0) and (j!=0) and field[i-1][j-1]!="бомба":  # up left
+                    field[i-1][j-1]+=1
+            if (j != 4) and (i != 0) and field[i - 1][j + 1]!="бомба":  # up right
+                    field[i - 1][j + 1] += 1
+            if (i != 4) and (j != 0) and field[i + 1][j - 1]!="бомба":  # down left
+                    field[i + 1][j - 1] += 1
+            if (i != 4) and (j != 4) and field[i + 1][j + 1]!="бомба":
+                    field[i + 1][j + 1] += 1  # down right
+            if (i!=0) and field[i-1][j]!="бомба":  # up
+                    field[i-1][j]+=1
+            if (j != 0) and field[i][j - 1]!="бомба":  # left
+                    field[i][j - 1] += 1
+            if (j != 4) and field[i][j + 1]!="бомба":  # right
+                    field[i][j + 1] += 1
+            if (i != 4) and field[i + 1][j]!="бомба":  # down
+                    field[i + 1][j] += 1
+
+print(field)
